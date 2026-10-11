@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>나나커플의 부부생활 규칙</title>
+  <title>주나이나 커플의 부부생활 규칙</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
   <style>
     :root { --ink:#5e3a4e; --wine:#a85c79; --rose:#eeb7c8; --blush:#fff6f7; --cream:#fffaf2; --gold:#d8a96d; --lav:#ece5f6; }
     * { box-sizing:border-box; }
-    body { margin:0; color:var(--ink); background:linear-gradient(140deg,#fff7f7 0%,#f8eff8 50%,#fff8ed 100%); font-family:'Gowun Batang',serif; min-height:100vh; }
+    body { margin:0; color:var(--ink); background:linear-gradient(rgba(255,248,249,.76),rgba(253,247,251,.82)),url('wedding-background.jpg') center/cover fixed; font-family:'Gowun Batang',serif; min-height:100vh; }
     body:before, body:after { content:'✦'; position:fixed; color:#e7bfd5; font-size:2rem; opacity:.55; pointer-events:none; } body:before { top:16%; left:6%; } body:after { right:7%; bottom:18%; }
     .wrap { width:min(100%, 760px); margin:auto; padding:28px 18px 48px; }
     header { position:relative; text-align:center; padding:28px 16px 24px; border:1px solid #e7c9d4; background:rgba(255,255,255,.68); box-shadow:0 12px 35px rgba(148,89,117,.1); border-radius:28px 28px 70px 70px; overflow:hidden; }
@@ -32,10 +32,10 @@
 </head>
 <body>
   <main class="wrap">
-    <header><div aria-hidden="true"></div><h1>나나커플의<br>부부생활 규칙</h1><p class="subtitle">서로를 가장 아끼는 우리만의 약속 노트</p></header>
+    <header><div aria-hidden="true"></div><h1>주나이나 커플의<br>부부생활 규칙</h1><p class="subtitle">서로를 가장 아끼는 우리만의 약속 노트</p></header>
     <p class="quote">“완벽해서가 아니라, 함께 다듬어가서 더 빛나는 우리.”</p>
     <section aria-label="규칙 관리"><div class="toolbar"><input class="search" id="search" type="search" placeholder="규칙을 찾아보세요" aria-label="규칙 검색"><button class="add" id="addBtn">+ 새 약속</button></div><div class="sort-row"><select class="sort" id="sort" aria-label="규칙 정렬 방식"><option value="newest">최신 순</option><option value="oldest">오래된 순</option><option value="alphabetical">가나다라 순</option><option value="stars">별점 높은 순</option></select></div><div class="status"><span>우리의 약속 <strong id="count">0</strong>개</span><span id="doneText">0개 지켰어요 ♡</span></div><div id="rules"></div></section>
-    <footer>나나커플의 작은 궁전 · 모든 약속은 이 기기에 저장돼요</footer>
+    <footer>주나이나 커플의 작은 궁전 · 이 링크에서 직접 추가·수정할 수 있어요</footer>
   </main>
   <dialog id="editor"><form class="form" id="ruleForm"><h2 id="formTitle">새로운 약속</h2><input type="hidden" id="ruleId"><label for="title">약속 제목</label><input id="title" required maxlength="60" placeholder="예: 하루 한 번 꼭 안아주기"><label for="category">카테고리</label><select id="category"><option>소통</option><option>집안일</option><option>재정</option><option>시간</option><option>신뢰</option><option>애정</option><option>기타</option></select><label>중요도 <small>(별을 눌러 선택)</small></label><div class="rating" aria-label="중요도 별점"><input id="star5" type="radio" name="stars" value="5"><label for="star5" title="매우 중요">★</label><input id="star4" type="radio" name="stars" value="4"><label for="star4" title="중요">★</label><input id="star3" type="radio" name="stars" value="3"><label for="star3" title="보통">★</label><input id="star2" type="radio" name="stars" value="2"><label for="star2" title="약간 중요">★</label><input id="star1" type="radio" name="stars" value="1"><label for="star1" title="참고">★</label><input id="star0" type="radio" name="stars" value="0" checked><label for="star0" title="별점 없음">☆</label></div><label for="detail">자세한 내용 <small>(선택)</small></label><textarea id="detail" maxlength="200" placeholder="우리만의 구체적인 방법을 적어봐요."></textarea><div class="form-actions"><button class="cancel" type="button" id="cancelBtn">취소</button><button class="save" type="submit">저장하기</button></div></form></dialog>
   <script>
